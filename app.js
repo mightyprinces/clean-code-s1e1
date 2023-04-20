@@ -36,14 +36,17 @@ var createNewTaskElement=function(taskString){
     label.className='task';
 
     //Each elements, needs appending
+    listItem.className="task-item";
     checkBox.type="checkbox";
+    checkBox.className="input-checkbox";
     editInput.type="text";
-    editInput.className="task";
+    editInput.className="input-text task";
+    label.classList.add("label");
 
     editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit";
+    editButton.className="button edit";
 
-    deleteButton.className="delete";
+    deleteButton.className="button delete";
     deleteButtonImg.src='./remove.svg';
     deleteButton.appendChild(deleteButtonImg);
 
@@ -177,15 +180,11 @@ for (var i=0; i<incompleteTaskHolder.children.length;i++){
 }
 
 
-
-
 //cycle over completedTasksHolder ul list items
 for (var i=0; i<completedTasksHolder.children.length;i++){
     //bind events to list items chldren(tasksIncompleted)
     bindTaskEvents(completedTasksHolder.children[i],taskIncomplete);
 }
-
-
 
 
 // Issues with usability don't get seen until they are in front of a human tester.
