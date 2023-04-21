@@ -1,12 +1,12 @@
 //Document is the DOM can be accessed in the console with document.window.
-// Tree is from the top, html, body, p etc.
+//Tree is from the top, html, body, p etc.
 
 //Problem: User interaction does not provide the correct results.
 //Solution: Add interactivity so the user can manage daily tasks.
 //Break things down into smaller steps and take each step at a time.
 
 
-// Event handling, user interaction is what starts the code execution.
+//Event handling, user interaction is what starts the code execution.
 
 var taskInput=document.getElementById("new-task");//Add a new task.
 var addButton=document.getElementsByTagName("button")[0];//first button
@@ -33,10 +33,10 @@ var createNewTaskElement=function(taskString){
     var deleteButtonImg=document.createElement("img");//delete button image
 
     label.innerText=taskString;
-    label.className='task';
+    label.className="task";
 
     //Each elements, needs appending
-    listItem.className="task-item";
+    listItem.className="task-list__item";
     checkBox.type="checkbox";
     checkBox.className="input-checkbox";
     editInput.type="text";
@@ -47,7 +47,8 @@ var createNewTaskElement=function(taskString){
     editButton.className="button edit";
 
     deleteButton.className="button delete";
-    deleteButtonImg.src='./remove.svg';
+    deleteButtonImg.src="./remove.svg";
+    deleteButtonImg.className="button-icon"
     deleteButton.appendChild(deleteButtonImg);
 
 
@@ -59,7 +60,6 @@ var createNewTaskElement=function(taskString){
     listItem.appendChild(deleteButton);
     return listItem;
 }
-
 
 
 var addTask=function(){
@@ -77,7 +77,6 @@ var addTask=function(){
 }
 
 //Edit an existing task.
-
 var editTask=function(){
     console.log("Edit Task...");
     console.log("Change 'edit' to 'save'");
@@ -85,14 +84,14 @@ var editTask=function(){
 
     var listItem=this.parentNode;
 
-    var editInput=listItem.querySelector('input[type=text]');
+    var editInput=listItem.querySelector("input[type=text]");
     var label=listItem.querySelector("label");
     var editBtn=listItem.querySelector(".edit");
-    var containsClass=listItem.classList.contains("edit-mode");
-    //If class of the parent is .edit-mode
+    var containsClass=listItem.classList.contains("task-list__item_edit-mode");
+    //If class of the parent is .task-list__item_edit-mode
     if(containsClass){
 
-        //switch to .edit-mode
+        //switch to .task-list__item_edit-mode
         //label becomes the inputs value.
         label.innerText=editInput.value;
         editBtn.innerText="Edit";
@@ -101,8 +100,8 @@ var editTask=function(){
         editBtn.innerText="Save";
     }
 
-    //toggle .edit-mode on the parent.
-    listItem.classList.toggle("edit-mode");
+    //toggle .task-list__item_edit-mode on the parent.
+    listItem.classList.toggle("task-list__item_edit-mode");
 };
 
 
@@ -139,7 +138,6 @@ var taskIncomplete=function(){
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
 }
-
 
 
 var ajaxRequest=function(){
@@ -187,8 +185,8 @@ for (var i=0; i<completedTasksHolder.children.length;i++){
 }
 
 
-// Issues with usability don't get seen until they are in front of a human tester.
+//Issues with usability don't get seen until they are in front of a human tester.
 
-//prevent creation of empty tasks.
+//Prevent creation of empty tasks.
 
 //Change edit to save when you are in edit mode.

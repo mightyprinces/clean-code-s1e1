@@ -5,24 +5,25 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="style.css" media="screen" charset="utf-8">
 </head>
+
 <body>
-  <header class="main-img-section">
-    <img src="./eisenhower-matrix.jpg" class="main-img" alt="the Eisenhower matrix of productivity with 4 blocks: urgent, important, not urgent, not important">
-    <a class="more-inf" href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
+  <header class="header">
+    <img src="./eisenhower-matrix.jpg" class="header__img" alt="the eisenhower matrix of productivity with 4 blocks: urgent, important, not urgent, not important">
+    <a class="header__more-inf" href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
   </header>
 
-  <main class="main-page-element">
+  <main class="main">
     <section id="add-element-section">
     <label class="label subtitle" for="new-task">Add Item</label>
-    <div class="task-row-wrapper">
-      <input id="new-task" class="input-text task" type="text">
+    <div class="new-task-wrapper">
+      <input id="new-task" class="input-text task new-task" type="text">
       <button class="button">Add</button>
     </div>
     </section>
     <section>
       <h3 class="subtitle">Todo</h3>
       <ul class="task-list" id="incomplete-tasks">
-        <li class="task-item">
+        <li class="task-list__item">
           <input type="checkbox" class="input-checkbox">
           <label class="label task">Pay Bills</label>
           <input type="text" class="input-text task">
@@ -31,7 +32,7 @@
             <img class="button-icon" src="./remove.svg" alt="">
           </button>
         </li>
-        <li class="task-item edit-mode">
+        <li class="task-list__item task-list__item_edit-mode">
           <input type="checkbox" class="input-checkbox">
           <label class="label task">Go Shopping</label>
           <input type="text" value="Go Shopping" class="input-text task">
@@ -45,7 +46,7 @@
     <section>
       <h3 class="subtitle">Completed</h3>
       <ul class="task-list" id="completed-tasks">
-        <li class="task-item">
+        <li class="task-list__item">
           <input type="checkbox" class="input-checkbox" checked>
           <label class="label task">See the Doctor</label>
           <input type="text" class="input-text task">
