@@ -21,7 +21,7 @@ body {
   font-family: fantasy, cursive;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
 
   .main-img-section {
     text-align: center;
@@ -148,13 +148,13 @@ button {
   width: 226px;
 }
 
-.button.delete img {
+.button.delete .button-icon {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-.button.delete img:hover {
+.button.delete .button-icon:hover {
   transform: rotateZ(0);
 }
 
