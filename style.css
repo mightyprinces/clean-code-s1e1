@@ -18,9 +18,11 @@
 }
 
 @media (max-width:768px) {
-  .main-image-block { text-align: center;
+  .main-image-block { 
+    text-align: center;
+  }
 }
-}
+
 .page {
   display: block;
   width: 500px;
@@ -115,7 +117,7 @@ input,button{
   font-size: 18px;
   width: 226px;
 }
-.task-element >    .input[type="text"] {
+.task-element > .input[type="text"] {
   width: 226px
 }
 .button.delete-button img {
